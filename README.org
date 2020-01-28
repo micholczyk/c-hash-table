@@ -1,0 +1,50 @@
+#+TITLE: c-hash-table
+
+* Introduction.
+
+My implementation of a
+[[https://en.wikipedia.org/wiki/Hash_table][hash table]]
+in the C language, following
+[[https://github.com/jamesroutley/write-a-hash-table][this]]
+tutorial by jamesroutley. I created this in order to further my C knowledge and
+it's probably not at all useable in production, in the current state. Should
+this little project prove to be useful to me I will eventually improve it.
+
+Currently this creates hash tables that are
+[[https://en.wikipedia.org/wiki/Open_addressing][open-addressed]]
+and
+[[https://en.wikipedia.org/wiki/Double_hashing][double-hashed]].
+
+* Methods (API).
+
+#+BEGIN_SRC C
+/* Create a new hash table */
+ht_hash_table* ht = ht_new_table();
+
+/* Put an item into the hash table */
+/* DEF: void ht_insert(ht, const char* key, const char* val) */
+ht_insert(ht, "name", "user1");
+
+/* Search for an item */
+/* DEF: char* ht_search(ht_hash_table* ht, const char* key) */
+ht_search(ht, "name"); // returns item value - "user1"
+
+/* Delete an item */
+/* DEF: void ht_delete(ht_hash_table* ht, const char* key) */
+ht_delete(ht, "name");
+
+/* Delete a hash table */
+/* DEF: void ht_del_hash_table(ht_hash_table* ht) */
+ht_del_hash_table(ht);
+#+END_SRC
+
+* To-do:
+** TODO Better documentation.
+*** [ ] Add docstrings to functions in source files.
+*** [ ] Explain usage in README.
+*** [ ] API documentation in README.
+** TODO Clean up the code.
+** TODO Error checking.
+** TODO More API methods.
+*** [ ] Displaying the table.
+** TODO Alternative collision avoiding mechanisms, ability to choose.
