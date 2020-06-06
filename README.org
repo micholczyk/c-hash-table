@@ -37,14 +37,3 @@ ht_delete(ht, "name");
 /* DEF: void ht_del_hash_table(ht_hash_table* ht) */
 ht_del_hash_table(ht);
 #+END_SRC
-
-* To-do:
-** TODO Better documentation.
-*** [ ] Add docstrings to functions in source files.
-*** [ ] Explain usage in README.
-*** [ ] API documentation in README.
-** TODO Clean up the code.
-** TODO Error checking.
-** TODO More API methods.
-*** [ ] Displaying the table.
-** TODO Alternative collision avoiding mechanisms, ability to choose.
